@@ -12,6 +12,7 @@ $collection = $db->post;
 //save post
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
  echo "Please insert correct code here.";die;
+ //save post record and redirect to index.php
 }
 
 

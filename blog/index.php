@@ -12,7 +12,9 @@ $collection = $db->post;
 $username = isset($_GET['username']) ? $_GET['username'] : null;
 
 
-//insert mongodb code to find post by username
+// insert mongodb code here
+// find all post in descending order
+// if username is given then find post by username
 
 ?>
 
