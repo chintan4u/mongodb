@@ -4,15 +4,26 @@
 $client = new MongoClient();
 
 //get database.
-$db = $client->tieto;
+$db = $client->test;
 
 //get post collection.
-$collection = $db->post;
+$collection = $db->users;
 
 //save post
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
- echo "Please insert correct code here.";die;
+//print_r($_POST);
+//print_r($collection);
+$document = array (
+			"title"  => $_POST["title"],
+			"body" => $_POST["body"],
+			"username" => $_POST["username"],
+			"created_at" => date("Y-m-d H:i:s")
+			);
+$collection->insert($document);
+// echo "Please insert correct code here.";die;
+ echo "Document inserted successfully";
  //save post record and redirect to index.php
+ header('Location: index.php');
 }
 
 
